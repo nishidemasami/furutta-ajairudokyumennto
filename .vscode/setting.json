@@ -1,0 +1,15 @@
+{
+	"window.zoomLevel": -1,
+    "workbench.startupEditor": "untitled",
+	"workbench.colorCustomizations": {
+		"titleBar.activeBackground": "#ff7b00",
+		"titleBar.activeForeground": "#ffffff",
+		"activityBarBadge.background": "#ff7b00"
+	},
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.wordWrap": "on",
+	"files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+	"files.eol": "\n"
+}

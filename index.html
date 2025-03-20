@@ -1,0 +1,433 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Flutterにおけるアジャイル開発について · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="override_style.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="markdown/testable_design.md" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Flutterにおけるアジャイル開発について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="markdown/testable_design.md">
+            
+                <span>
+            
+                    
+                    テスト可能な設計について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="markdown/how_to_use_swagger.md">
+            
+                <span>
+            
+                    
+                    OpenAPI(Swagger)利用について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="markdown/how_to_automation.md">
+            
+                <span>
+            
+                    
+                    自動静的コード解析・自動ビルド・自動テスト・自動デプロイについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="markdown/how_to_gen_document.md">
+            
+                <span>
+            
+                    
+                    ドキュメンテーションコメントによる設計書の自動生成について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="markdown/how_to_gen_screen_layout_design_document.md">
+            
+                <span>
+            
+                    
+                    画面設計書の自動生成について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="markdown/agile_task_management.md">
+            
+                <span>
+            
+                    
+                    アジャイル開発におけるタスクの整理・タスクの分析・タスク管理について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="markdown/ai_development.md">
+            
+                <span>
+            
+                    
+                    AI開発について
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="markdown/appendix/services.md">
+            
+                <span>
+            
+                    
+                    付録：使用ソフトウェア・ライブラリ・サービス一覧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Flutterにおけるアジャイル開発について</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="flutterにおけるアジャイル開発について">Flutterにおけるアジャイル開発について</h1>
+<p>Flutterにおけるアジャイル開発について、ネット上にあまり知見がないので本ドキュメントを書きました。</p>
+<h2 id="本ドキュメントについて">本ドキュメントについて</h2>
+<p>本ドキュメント「Flutterにおけるアジャイル開発について」は、よりよいFlutterのアジャイル開発のための手引きです。<br>以下7つの章に分けて説明しています。</p>
+<ul>
+<li>テスト可能な設計について</li>
+<li>OpenAPI(Swagger)利用について</li>
+<li>自動静的コード解析・自動テスト・自動ビルド・自動デプロイについて</li>
+<li>ドキュメンテーションコメントによる設計書の自動生成について</li>
+<li>画面設計書の自動生成について</li>
+<li>アジャイル開発におけるタスクの整理・タスクの分析・タスク管理の自動化について</li>
+<li>AI開発について</li>
+</ul>
+<p>本ドキュメントはMarkdownで書かれGitHubで公開されており、そしてまさに今も追加され続けており誰でも(あなたも！)加筆修正に参加することができます。<br>ドキュメントの更新履歴や更新内容はすべて管理されていていつでも確認することができます。<br>また、誤字脱字を発見したり内容に誤りがあれば、いつでもGitHub Issuesに投稿してください。</p>
+<p>  <img src="images/url_qr.png" alt="GitHub「Flutterにおけるアジャイル開発について」リポジトリ"></p>
+<ul>
+<li>GitHub <a href="https://github.com/nishidemasami/furutta-ajairudokyumennto" target="_blank">https://github.com/nishidemasami/furutta-ajairudokyumennto</a></li>
+<li>GitHub Issues <a href="https://github.com/nishidemasami/furutta-ajairudokyumennto/issues" target="_blank">https://github.com/nishidemasami/furutta-ajairudokyumennto/issues</a></li>
+</ul>
+<p>Markdownで書かれたドキュメントは、誰もが読みやすいようにHTMLとPDFで公開しています。<br>HTML版はHonkitで生成されGitHub Pagesで公開されており、内容が更新されるとGitHub Actionsによって常に最新データに更新されるようになっています。
+PDF版はCalibreで生成されGitHub Releasesで管理されています。これもHTML版と同様に内容が更新されるとGitHub Actionsによって常に最新データに更新されるようになっています。  </p>
+<ul>
+<li>HTML版 <a href="https://nishidemasami.github.io/furutta-ajairudokyumennto/" target="_blank">https://nishidemasami.github.io/furutta-ajairudokyumennto/</a>  </li>
+<li>PDF版 <a href="https://github.com/nishidemasami/furutta-ajairudokyumennto/releases/download/pdf_relrase/furutta-ajairudokyumennto.pdf" target="_blank">https://github.com/nishidemasami/furutta-ajairudokyumennto/releases/download/pdf_relrase/furutta-ajairudokyumennto.pdf</a>  </li>
+</ul>
+<h2 id="おことわり">おことわり</h2>
+<ul>
+<li>このドキュメントでは®マーク、™マークなどの登録表示に関するマークは省略しております。この省略はいかなる意味においても登録表示を軽視する意図を持ちません。</li>
+<li>記載の会社名、団体名、機関名、個人名、組織名、製品名、およびアイコンには、会社/団体の商標または登録商標などを一部含みます。</li>
+<li>このドキュメントで紹介するサービスはすべて国際的な情報セキュリティ規格である「ISO/IEC 27001」を取得していることを確認していますが、実際にサービスを使用する際にはその案件で求められているセキュリティ要件を満たすかどうかを各自別途確認してください。</li>
+</ul>
+<h2 id="各章の説明">各章の説明</h2>
+<ul>
+<li><a href="./">Flutterにおけるアジャイル開発について</a></li>
+</ul>
+<p>本章です。</p>
+<ul>
+<li><a href="markdown/testable_design.md">テスト可能な設計について</a></li>
+</ul>
+<p>アジャイルでは頻繁に仕様が変わります。しかし、仕様が変わるといっても業務が根本から変わるような仕様変更はそうそうあるものではなく、開発の最初からDDD(ドメイン駆動設計)によりきちんと業務をドメインモデリングすることによって、仕様変更に対して堅牢な設計が可能です。<br>また、描画ロジックとドメインモデルとをクリーンアーキテクチャによりロジックを分離し、画面側の仕様変更と業務側の仕様変更が互いに影響しないような設計が可能です。<br>そして、描画ロジックとドメインモデルをそれぞれでユニットテストを実施し自動テストを実施し、DI(依存性の注入)により結合することで、テストの粒度を細かくしデグレの発生を防ぎ品質を高めることが可能です。</p>
+<p>この章では、上記のような手法によりプログラムの品質を様々な観点から担保するためのテスト可能な設計の手法について説明します。</p>
+<ul>
+<li><a href="markdown/how_to_use_swagger.md">OpenAPI(Swagger)利用について</a></li>
+</ul>
+<p>アジャイルでは頻繁に仕様が変わります。それはAPI定義も同様です。</p>
+<p>Single Source of Truth(SSOT)としてOpenAPI(Swagger)を策定し、Dart側で利用することによって、バージョン管理が容易で、バグが混入しにくいアプリケーション開発が可能です。</p>
+<p>この章では、OpenAPI(Swagger)を利用して生産性を高める手法について説明します。</p>
+<ul>
+<li><a href="markdown/how_to_automation.md">自動静的コード解析・自動ビルド・自動テスト・自動デプロイについて</a></li>
+</ul>
+<p>現代的なシステム開発では通常は、自動静的コード解析や自動テストによりプログラムの品質を担保します。<br>自動テストでは、人間の手では到底できないような膨大な量のテストケースでも高速にテストすることができます。<br>また、CI/CD(「静的コード解析・ビルド・テスト・デプロイ」の自動化)によって、なんらかのプログラムの変更が他のプログラムに影響してバグが発生した場合にも自動で検知されます。</p>
+<p>この章では、プログラムの品質を担保するための自動静的コード解析・自動テスト・自動ビルド・自動デプロイについて説明します。</p>
+<ul>
+<li><a href="markdown/how_to_gen_document.md">ドキュメンテーションコメントによる設計書の自動生成について</a></li>
+</ul>
+<p>ウォーターフォール開発においては美麗な設計書を職人技で手作業で作ることは意味があることだったかもしれません。<br>しかし、アジャイル開発においては仕様が変わる度に設計書をその都度更新することは無駄以外の何物でもありません。<br>Dartでは、ドキュメンテーションコメントによって詳細設計書を自動生成することが可能です。<br>ドキュメントを自動生成し、常に最新のドキュメントを関係者各位と共有し続けることはプロジェクトの円滑な進行のためには欠かせません。</p>
+<p>この章では、アジャイル開発において重要となる設計書の自動生成の手法について説明します。</p>
+<ul>
+<li><a href="markdown/how_to_gen_screen_layout_design_document.md">画面設計書の自動生成について</a></li>
+</ul>
+<p>前々章のCI/CDによって画面イメージを出力することが可能です。<br>アジャイル開発において画面設計書は箇条書きレベルのものですが、自動生成した画面イメージを添付することで、設計書のレビューとレイアウトのテストを並行して進めることで効率化できます。<br>その画面イメージを画面IDや連番などによって管理することで、画面設計書についても自動生成および自動最新化が可能です。  </p>
+<p>この章では、画面設計書の自動生成手法について説明します。</p>
+<ul>
+<li><a href="markdown/agile_task_management.md">アジャイル開発におけるタスクの整理・タスクの分析・タスク管理について</a></li>
+</ul>
+<p>ウォーターフォール開発では、上位工程で決まった仕様について下位工程で変更することは困難です。<br>しかしアジャイル開発では、最短で顧客にとってのバリュー(価値)を最大化することを目的として、最もバリューに寄与するタスクから着手し、逆にバリューに寄与しないタスクは常に先送りする必要があります。タスク分析とタスク消化、そしてタスクの工数とバリューの事後評価を小さいサイクルで回しながら、どうすればバリューを最大化できるかを考えながらプロジェクトを進めてゆきます。</p>
+<p>アジャイル開発では、要件や要求、要望、イシューを一括してタスク化し、各タスクをMoSCoW分析により「必須」「推奨」「可能」「先送り」に分類し、プロジェクトを進める中で、タスクの工数の見積もり精度、タスクの工数に対する顧客へのバリューの見積もり精度をそれぞれ高めてゆきながら、常にどのタスクに着手するかを工数とバリューを天秤にかけながら評価し、そしてプロジェクトを進めながらタスクの評価精度を高めてゆきます。  </p>
+<p>この章では、アジャイル開発におけるタスクの整理・タスクの分析・タスク管理手法について説明します。</p>
+<ul>
+<li><a href="markdown/ai_development.md">AI開発について</a></li>
+</ul>
+<p>この章では、AIを活用してプログラムを生成・修正することで、生産性を高める手法、また、AIを活用しやすい環境の構築手法を説明します。</p>
+<ul>
+<li><a href="markdown/appendix/services.md">付録：使用ソフトウェア・ライブラリ・サービス一覧</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="markdown/testable_design.md" class="navigation navigation-next navigation-unique" aria-label="Next page: テスト可能な設計について">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flutterにおけるアジャイル開発について","level":"1.1","depth":1,"next":{"title":"テスト可能な設計について","level":"1.2","depth":1,"path":"markdown/testable_design.md","ref":"markdown/testable_design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-intopic-toc","-sharing","uml"],"root":"./","styles":{"website":"override_style.css"},"pluginsConfig":{"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":false,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":40,"left":40,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"uml":{"charset":"UTF-8"},"variables":{},"language":"ja","gitbook":"*","publisher":""},"file":{"path":"README.md","mtime":"2025-03-20T11:38:41.213Z","type":"markdown"},"gitbook":{"version":"5.1.1","time":"2025-03-20T11:39:19.343Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
