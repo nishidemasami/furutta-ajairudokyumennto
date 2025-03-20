@@ -1,0 +1,44 @@
+name: build and release docs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Build docs and Generate PDF
+      run: chmod -R 777 . && docker run -v .:/honkit ghcr.io/nishidemasami/markdown-docs:v1.2.1 /bin/sh -c "npx honkit build && npx honkit pdf ./ ./furutta-ajairudokyumennto.pdf"
+
+    - name: Push to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: _book/
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: documents
+        path: furutta-ajairudokyumennto.pdf
+
+    - name: Delete existing release if exists
+      run: |
+        gh release delete pdf_relrase -y || echo "No existing release to delete"
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+    - name: Create Release
+      run: |
+        gh release create pdf_relrase --generate-notes furutta-ajairudokyumennto.pdf
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
